@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <package name="operation" namespace="/" extends="struts-default, json-default">
+
+        <action name="infoOperation_*" class="infoOperationAction" method="{1}">
+            <result name="delItemSuccess" type="json" >
+                <param name="root">operationResult</param>
+            </result>
+            <result name="addItemSuccess" type="json" >
+                <param name="root">operationResult</param>
+            </result>
+            <result name="updateItemSuccess" type="json" >
+                <param name="root">operationResult</param>
+            </result>
+            <result name="getAllItemOrSearch" type="json" >
+                <param name="root">itemResultData</param>
+            </result>
+            <result name="labelQueryItem" type="json" >
+                <param name="root">itemResultData</param>
+            </result>
+            <allowed-methods>addItem, delItem, updateItem, getAllItemOrSearch, labelQueryItem</allowed-methods>
+        </action>
+
+        <action name="headOperation_*" class="headOperationAction" method="{1}">
+            <result name="delHeadSuccess" type="json" >
+                <param name="root">operationResult</param>
+            </result>
+            <result name="addHeadSuccess" type="json" >
+                <param name="root">operationResult</param>
+            </result>
+            <result name="updateHeadSuccess" type="json" >
+                <param name="root">operationResult</param>
+            </result>
+            <result name="getALLHeadSuccess" type="json" >
+                <param name="root">headEntities</param>
+            </result>
+            <result name="headAdminPage">/page/headAdmin.jsp</result>
+            <result name="returnIndex">/index.jsp</result>
+            <allowed-methods>addHead, delHead, updateHead, getAllHead, headAdminPage, returnIndex</allowed-methods>
+        </action>
+
+        <action name="modelOperation_*" class="modelOperationAction" method="{1}">
+            <result name="delModelSuccess" type="json" >
+                <param name="root">operationResult</param>
+            </result>
+            <result name="addModelSuccess" type="json" >
+                <param name="root">operationResult</param>
+            </result>
+            <result name="updateModelSuccess" type="json" >
+                <param name="root">operationResult</param>
+            </result>
+            <result name="getALLModelSuccess" type="json" >
+                <param name="root">modelEntities</param>
+            </result>
+            <result name="modelAdminPage">/page/modelAdmin.jsp</result>
+            <result name="returnIndex">/index.jsp</result>
+            <allowed-methods>addModel ,delModel, updateModel, getAllModel, modelAdminPage, returnIndex</allowed-methods>
+        </action>
+    </package>
+</struts>
